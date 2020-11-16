@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}TKH Registered Students{% endblock %}
+{% block body %}
+<h1 >Registered Students</h1>
+    <ul>
+        <li> <strong>Fellow Name   |   Fellowship Track</strong> </li>
+    {%  
+        for student in students[1:]: %}
+        <li>{{ student }}</li>
+    {% endfor %}
+    </ul>
+    <!-- {% for student in students: %}
+    <table>
+        <tr>
+            <th>
+                Student Name
+            </th>
+            <th>Fellowship Track</th>
+        </tr>
+        <tr>
+            <td>
+                {{ student }}
+            </td>
+        </tr>
+        
+    </table>
+    {% endfor %}
+{% endblock %} -->

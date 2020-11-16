@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}TKH Fellowship Tracks{% endblock %}
+{% block body %}
+
+    Hello {{ name }} 
+
+    <h1>    Register into your TKH Track Fellowship</h1>
+    <form action="/register" method="POST">
+        <input name="name" placeholder="Name" type="text">
+        <select name="track">
+            <option disabled selected value="">Track</option>
+            <option value="Web Dev W. JavaScript">Web Development W. JavaScript</option>
+            <option value="Data Science W. Python">Data Science W. Python</option>
+        </select> 
+        <input type="submit" value="Register">   
+    </form>
+
+    <h1 >Registered Students</h1>
+    <ul>
+        <li> <strong>Fellow Name   |   Fellowship Track</strong> </li>
+    {%  
+        for student in students[1:]: %}
+        <li>{{ student }}</li>
+    {% endfor %}
+{% endblock %}
