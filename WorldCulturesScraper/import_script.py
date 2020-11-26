@@ -1,5 +1,11 @@
-#from app import db, DBTable
+#from app import db, DBTable #This is not working on my machine at the moment
 
+"""
+By Juan Peralta Web Scrapping Project: The followign script has the porpuse to learn a little bit more about each culture.
+
+On first phase we are scrapping The World Cultures Encyclopedia to realize how many cultures and descritpions. 
+
+"""
 # set up your scraping below
 import requests
 from bs4 import BeautifulSoup
