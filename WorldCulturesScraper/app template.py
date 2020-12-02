@@ -35,31 +35,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # this is our model (aka table)
-class Countries(db.Model):
-    __tablename__ = "Countries"
-    CountryId = db.Column(db.Integer, primary_key=True)
-    CountryName = db.Column(db.String(255), nullable=False)
-    CountryDescription = db.Column(db.Text, nullable=True)
-    #column_3 = db.Column(db.DateTime, nullable=False)
-    #column_4 = db.Column(db.Float, nullable=False)
-    #column_5 = db.Column(db.Boolean, nullable=False)
-
-class WorldCultures(db.Model):
-    __tablename__ = "World Cultures"
-    CountryGroupId = db.Column(db.Integer, primary_key=True)
-    CultureCountryGroup = db.Column(db.String(255), nullable=False)
-    CountryGroupURL = db.Column(db.String(255), nullable=False)
-    #column_3 = db.Column(db.DateTime, nullable=False)
-    #column_4 = db.Column(db.Float, nullable=False)
-    #column_5 = db.Column(db.Boolean, nullable=False)
-
-class CultureOfCountries(db.Model):
-    __tablename__ = "Culture of Countries"
-    CountryCultureID = db.Column(db.Integer, primary_key=True)
-    CountryID = db.Column(db.Integer, nullable=False)
-    CountryGroupURL = db.Column(db.String(255), nullable=False)
-    CultureCountryName = db.Column(db.String(150), nullable = False)
-    
+class DBTable(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    column_1 = db.Column(db.String(255), nullable=False)
+    column_2 = db.Column(db.Text, nullable=False)
     #column_3 = db.Column(db.DateTime, nullable=False)
     #column_4 = db.Column(db.Float, nullable=False)
     #column_5 = db.Column(db.Boolean, nullable=False)
