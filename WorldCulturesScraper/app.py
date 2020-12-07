@@ -22,7 +22,7 @@ app.config["ENV"] = 'development'
 app.config["SECRET_KEY"]=b'_5#y2L"F4Q8z\n\xec]/'
 
 # change the following .db file name
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your-db-name.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///WorldCultures-Project-JuanP.db'
 # this line is to prevent SQLAlchemy from throwing a warning
 # if you don't get one with out it, feel free to remove
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -37,7 +37,7 @@ db = SQLAlchemy(app)
 # this is our model (aka table)
 class Countries(db.Model):
     __tablename__ = "Countries"
-    CountryId = db.Column(db.Integer, primary_key=True)
+    CountryId = db.Column(db.Integer, primary_key=True) ##how to autoincrment on sqlalchemy
     CountryName = db.Column(db.String(255), nullable=False)
     CountryDescription = db.Column(db.Text, nullable=True)
     #column_3 = db.Column(db.DateTime, nullable=False)
@@ -56,10 +56,18 @@ class WorldCultures(db.Model):
 class CultureOfCountries(db.Model):
     __tablename__ = "Culture of Countries"
     CountryCultureID = db.Column(db.Integer, primary_key=True)
-    CountryID = db.Column(db.Integer, nullable=False)
-    CountryGroupURL = db.Column(db.String(255), nullable=False)
-    CultureCountryName = db.Column(db.String(150), nullable = False)
-    
+    CountryID = db.Column(db.Integer, nullable=True)
+    CountryGroupURL = db.Column(db.String(255), nullable=True)
+    CultureCountryName = db.Column(db.String(150), nullable = True)
+    CultureCountryName = db.Column(db.String(150), nullable = True)                    
+    FoodInDailyLife = db.Column(db.String (255), nullable = True)
+    FoodCustomsAtCeremonialOccasions = db.Column(db.String (255), nullable = True)
+    BasicEconomy = db.Column(db.String(255), nullable = True)
+    LandTenureAndProperty = db.Column(db.String(255), nullable = True)
+    CommercialActivities = db.Column(db.String(255), nullable = True)
+    MajorIndustries = db.Column(db.String(255), nullable = True)
+    Trade = db.Column(db.String(255), nullable = True)
+    DivsionOfLabor = db.Column(db.String(255), nullable = True)
     #column_3 = db.Column(db.DateTime, nullable=False)
     #column_4 = db.Column(db.Float, nullable=False)
     #column_5 = db.Column(db.Boolean, nullable=False)
